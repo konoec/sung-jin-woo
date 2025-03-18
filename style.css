@@ -1,0 +1,281 @@
+/* Root variables and theme colors */
+:root {
+    --primary: #6a11cb; /* Shadow Monarch purple */
+    --secondary: #2575fc; /* Blue accent */
+    --dark: #121212;
+    --darker: #0a0a0a;
+    --light: #e6e6e6;
+    --accent-shadow: 0 0 10px rgba(106, 17, 203, 0.7);
+}
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-image: linear-gradient(to bottom, var(--darker), var(--dark));
+    min-height: 100vh;
+}
+
+/* Header and navigation */
+header {
+    background-color: var(--darker);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+header svg {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 5px var(--primary));
+    transition: transform 0.3s ease;
+}
+
+header svg:hover {
+    transform: rotate(15deg);
+}
+
+header svg path {
+    fill: var(--primary);
+}
+
+header h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: var(--accent-shadow);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+section {
+    margin-bottom: 3rem;
+    background-color: rgba(18, 18, 24, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(106, 17, 203, 0.2);
+}
+
+h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 60px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+strong {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+/* Lists styling */
+ol, ul {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+li > ul {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Media elements */
+video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+audio {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    display: block;
+}
+
+/* Gallery */
+figure {
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+}
+
+figure img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+figure img:hover {
+    box-shadow: 0 8px 25px rgba(106, 17, 203, 0.4);
+}
+
+figcaption {
+    margin-top: 0.8rem;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--darker);
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    header svg {
+        margin-bottom: 0;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        margin-right: auto;
+        margin-left: 1rem;
+    }
+
+    /* Gallery grid */
+    .gallery section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
